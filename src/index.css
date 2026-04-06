@@ -1,0 +1,31 @@
+.card{
+    width:200px;
+    display: inline-block;
+    border-width:2px;
+    border-style: solid;
+    margin: 10px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    background: #000000;
+    color: #ffffff;
+
+}
+.card img{
+    width: 180px;
+    height: 150px;
+    border-radius: 20px;
+}
+.card button{
+    background: #ffffff;
+    border-radius: 20px;
+    padding:5px 20px ;
+    border-color: rgb(0, 255, 89);
+}
+.card button:hover{
+    background: #000000;
+    scale: 1.1;
+    transition: 0.1s;
+    border-color: rgb(255, 255, 255);
+    color: #ffffff;
+}
