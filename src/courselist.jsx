@@ -4,10 +4,11 @@ import CSS from './assets/CSS.WEBP';
 import JS from './assets/JS.WEBP';
 import JSX from './assets/JSX.WEBP';
 import ANGULAR from './assets/ANGULAR.WEBP';
+import { useState } from "react";
 
 function CourseList() {
 
-  const courses = [
+  const [courses,setcourse] = useState([
     {
       id:1,
       name: "HTML full course",
@@ -43,9 +44,13 @@ function CourseList() {
       rating: "⭐ 4.0",
       image: ANGULAR
     }
-  ];
+  ]);
+  function handledelete(id){
+    const filtercourse=courses.filter((course)=>course.id != id);
+    setcourse(filtercourse);
+  }
   courses.sort((x,y)=>y.price - x.price);
-  const filtercourse=courses.filter((course)=>course.price>=100);
+  
 const courseLISt = filtercourse.map((course) => (
         course.name && <Course
           key={course.id}
@@ -53,6 +58,8 @@ const courseLISt = filtercourse.map((course) => (
           image={course.image}
           price={course.price}
           rating={course.rating}
+          delete={handledelete}
+          id={course.id}
         />
       ))
   return (

@@ -1,23 +1,35 @@
-function Course({ name, image, price, rating }) {
+import { useState } from "react";
+function Course({ name, image, price, rating,handledelete }) {
+  const [purcheased, setpurcheased] = useState(false);
+  // function purcheased(){
+
+  // }
   return (
-      <>
-        <div className="card">
-          <img src={image} alt={name} />
-          <h3>{name}</h3>
-          <h4>{price}</h4>
-          <h5>{rating}</h5>
-          <button onClick={() => {
+    <>
+      <div className="card">
+        <img src={image} alt={name} />
+        <h3>{name}</h3>
+        <h4>{price}</h4>
+        <h5>{rating}</h5>
+        <button onClick={() => {
+          if (!purcheased) {
             const result = confirm("Do you want to buy this course?");
             if (result) {
-              alert(name+"course purcheased");
+              alert(name + "course purcheased");
             } else {
               alert("You clicked No");
             }
-          }}>
-            Buy Now
-          </button>
-        </div>
-      </>
+            setpurcheased(true);
+          }else{
+            alert("already purcheased!")
+          }
+        }}>
+          Buy Now
+        </button>
+        <button onClick={()=>handledelete(key)}>delete</button>
+        <p>{purcheased ? "already purcheased" : "get it now"}</p>
+      </div>
+    </>
   );
 }
 
