@@ -91,14 +91,14 @@ function CourseList() {
   ]);
 
   function handleDelete(id) {
-    const filteredCourses = courses.filter((course) => course.id !== id);
-    setcourse(filteredCourses);
-  }
-
+  console.log("Deleting ID:", id);
+  const filteredCourses = courses.filter((course) => course.id !== id);
+  setcourse(filteredCourses);
+}
   // create a copy before sorting
   const sortedCourses = [...courses].sort((x, y) => y.price - x.price);
 
-  const courseList = sortedCourses.map((course) => (
+  const courseList = courses.map((course) => (
     <Course
       key={course.id}
       name={course.name}
