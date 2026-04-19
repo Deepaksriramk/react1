@@ -4,7 +4,7 @@ import CSS from './assets/CSS.WEBP';
 import JS from './assets/JS.WEBP';
 import JSX from './assets/JSX.WEBP';
 import ANGULAR from './assets/ANGULAR.WEBP';
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 
 function CourseList() {
 
@@ -52,6 +52,7 @@ function CourseList() {
     );
     setCourse(filteredCourses);
   }
+  useEffect(()=> {console.log("indise course use effect")});
 
   const sortedCourses = [...courses].sort(
     (x, y) => x.price - y.price

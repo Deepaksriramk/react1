@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Course({ name, image, price, rating, handleDelete, id }) {
   const [purchased, setPurchased] = useState(false);
-
+useEffect(()=>{
+  console.log("inside course called");
+});
   return (
     <div className="card">
       <img src={image} alt={name} />
@@ -32,7 +34,7 @@ function Course({ name, image, price, rating, handleDelete, id }) {
         Delete
       </button>
 
-      <p>{purchased ? "Already purchased" : "Get it now"}</p>
+      <p>{purchased ? "Purchased" : "Get it now"}</p>
     </div>
   );
 }
