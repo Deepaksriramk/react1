@@ -5,35 +5,35 @@
       "name": "HTML full course",
       "price": "1213",
       "rating": "⭐ 4.0",
-      "image": "HTML"
+      "image": "./assets/HTML.WEBP"
         },
         {
       "id": 2,
       "name": "CSS full course",
       "price": "1243",
       "rating": "⭐ 4.0",
-      "image": "CSS"
+      "image": "./assets/CSS.WEBP"
         },
         {
       "id": 3,
       "name": "JS full course",
       "price": "1223",
       "rating": "⭐ 4.0",
-      "image": "JS"
+      "image": "./assets/JS.WEBP"
         },
         {
       "id": 4,
       "name": "JSX full course",
       "price": "1263",
       "rating": "⭐ 4.0",
-      "image": "JSX"
+      "image": "./assets/JSX.WEBP"
         },
         {
       "id": 5,
       "name": "ANGULAR full course",
       "price": 1273,
       "rating": "⭐ 4.0",
-      "image": "ANGULAR"
+      "image": "./assets/ANGULAR.WEBP"
         }
     ]
 }

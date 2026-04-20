@@ -1,9 +1,9 @@
 import Course from "./course";
-import HTML from './assets/HTML.WEBP';
-import CSS from './assets/CSS.WEBP';
-import JS from './assets/JS.WEBP';
-import JSX from './assets/JSX.WEBP';
-import ANGULAR from './assets/ANGULAR.WEBP';
+import HTML from '';
+import CSS from '';
+import JS from '';
+import JSX from '';
+import ANGULAR from '';
 import { useState ,useEffect} from "react";
 
 function CourseList() {
