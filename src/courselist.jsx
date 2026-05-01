@@ -1,14 +1,16 @@
 import Course from "./course";
-import HTML from '';
-import CSS from '';
-import JS from '';
-import JSX from '';
-import ANGULAR from '';
-import { useState ,useEffect} from "react";
+import { useState, useEffect } from "react";
 
 function CourseList() {
 
-  const [courses, setCourse] = useState();
+  const [courses, setCourse] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/courses')
+      .then(response => response.json())
+      .then(data => setCourse(data))
+      .catch(err => console.error(err));
+  }, []);
 
   function handleDelete(id) {
     const filteredCourses = courses.filter(
@@ -16,7 +18,6 @@ function CourseList() {
     );
     setCourse(filteredCourses);
   }
-  useEffect(()=> {console.log("indise course use effect")});
 
   const sortedCourses = [...courses].sort(
     (x, y) => x.price - y.price
@@ -30,7 +31,7 @@ function CourseList() {
         image={course.image}
         price={course.price}
         rating={course.rating}
-        handleDelete={handleDelete} 
+        handleDelete={handleDelete}
         id={course.id}
       />
     )
