@@ -19,11 +19,11 @@ function CourseList() {
     setCourse(filteredCourses);
   }
 
-  const sortedCourses = [...courses].sort(
-    (x, y) => x.price - y.price
-  );
+  // const sortedCourses = [...courses].sort(
+  //   (x, y) => x.price - y.price
+  // );
 
-  const courseList = sortedCourses.map((course) => (
+  const courseList = courses.map((course) => (
     course.name && (
       <Course
         key={course.id}
