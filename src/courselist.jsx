@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 function CourseList() {
 
   const [courses, setCourse] = useState([]);
-
+  const [error,setError]=useState(null);
   useEffect(() => {
     fetch('http://localhost:3000/courses')
       .then(response => response.json())
       .then(data => setCourse(data))
-      .catch(err => console.error(err));
+      .catch((error)=>{
+         console.error(error.message);
+        setError(error.message)
+      })
   }, []);
 
   function handleDelete(id) {
@@ -22,7 +25,13 @@ function CourseList() {
   // const sortedCourses = [...courses].sort(
   //   (x, y) => x.price - y.price
   // );
-
+if(!courses){
+  return (
+    <>
+    <h2>{error}</h2>
+    </>
+  )
+}
   const courseList = courses.map((course) => (
     course.name && (
       <Course
